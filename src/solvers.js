@@ -16,7 +16,30 @@
 
 
 window.findNRooksSolution = function(n) {
-  var solution = undefined; //fixme
+  // create game board
+  
+  // put rook on first square
+  //eliminate first row
+  //eliminate first column
+  ///place rook on next spot
+  //eliminate that row; elimate that column
+  //put next rook
+  //recursion!!!!
+ 
+  var myGame = new Board({'n': n});
+  // console.log(myGame.rows());
+  var placeRook = function(board, rowIndex = 0, colIndex = 0) {
+    //if empty board, then default row/col index are 0, else they are passed in
+    // debugger;
+    board.togglePiece(rowIndex, colIndex);
+    var newBoard = board;
+    if (rowIndex === n - 1 && colIndex === n - 1) {
+      console.log('inside if');
+      return newBoard.rows();
+    } 
+    return placeRook(newBoard, rowIndex + 1, colIndex + 1);
+  }; 
+  var solution = placeRook(myGame);
 
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
