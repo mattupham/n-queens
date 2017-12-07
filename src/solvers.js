@@ -55,6 +55,22 @@ window.findNRooksSolution = function(n) {
 window.countNRooksSolutions = function(n) {
   var solutionCount = 0;
   
+  //constant
+  //rook count always needs to be 4 for a valid solution
+    
+    
+  //variable
+  //starting location of each invocation of findNRooksSolution
+    
+  //next grid needs to save index of previously valid placed piece
+  //1st board: nook1 (0,0), nook2 (1,1)
+  //2nd board: nook1 (0,0), nook2 (1,2) 
+  //--> 2nd board nook2 remembers 1st board nook2 location, 
+  //starts placement after 1st board nook2 location
+  
+  //returns a number recursively like an iterative .reduce function
+  //return func(2) + 2
+  
   
   
   
